@@ -1,0 +1,9 @@
+base_url = "https://pqcfox.dev"
+compile_sass = true
+build_search_index = false
+theme = "terminimal"
+
+[markdown]
+highlight_code = true
+
+[extra]
