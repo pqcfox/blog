@@ -1,9 +1,31 @@
 base_url = "https://pqcfox.dev"
+title = "kat's notes"
+description = "a blog on cybersecurity, computational math, and compilers written entirely by a fox"
 compile_sass = true
+generate_feeds = true
+feed_filenames = ["rss.xml", "atom.xml"]
+taxonomies = [
+    {name = "tags"}
+]
 build_search_index = false
 theme = "terminimal"
 
 [markdown]
-highlight_code = true
+highlight_code = false
 
 [extra]
+accent_color = "orange"
+background_color = "orange"
+logo_text = "// kat's notes //"
+menu_items = [
+    {name = "blog", url = "$BASE_URL"},
+    {name = "tags", url = "$BASE_URL/tags"},
+    {name = "archive", url = "$BASE_URL/archive"},
+    {name = "about", url = "$BASE_URL/about"},
+    {name = "github", url = "https://github.com/pqcfox", newtab = true},
+    {name = "linkedin", url = "https://linkedin.com/in/katiewat", newtab = true},
+]
+enable_post_view_navigation = true
+post_view_navigation_prompt = "read more?"
+use_full_hack_font = false
+page_titles = "combined"
