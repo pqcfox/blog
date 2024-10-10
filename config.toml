@@ -29,3 +29,5 @@ enable_post_view_navigation = true
 post_view_navigation_prompt = "read more?"
 use_full_hack_font = false
 page_titles = "combined"
+favicon = "/favicon.png"
+favicon_mimetype = "image/png"

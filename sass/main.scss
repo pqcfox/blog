@@ -13,7 +13,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Hack, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+  font-family: Iosevka, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
   font-size: 1rem;
   line-height: 1.54;
   background-color: var(--background);
@@ -54,6 +54,7 @@ h4, h5, h6 {
 
 a {
   color: inherit;
+  text-underline-position: under;
 }
 
 img {
