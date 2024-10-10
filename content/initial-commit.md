@@ -22,13 +22,15 @@ if you're curious about the stuff i enjoy, here's some other things i've done:
 
 - published [research demonstrating significant shortcomings](https://arxiv.org/abs/1904.02225) in a [stanford vision lab](https://svl.stanford.edu/) visual grounding model
 
-- ran windows/AD offense for stanford's [collegiate penetration testing competition](https://cp.tc/) team, scoring 2nd place worldwide (got to [dump lsass](https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/) on the dc--was a super exciting moment)
+- ran windows/active directory offense for stanford's [collegiate penetration testing competition](https://cp.tc/) team, scoring 2nd place worldwide (got to [dump lsass](https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/) on the dc--was a super exciting moment)
 
 - wrote an undergrad thesis providing an "operationalized" introduction to [gkm varieties](https://en.wikipedia.org/wiki/GKM_variety)
 
 - frequently led the crypto efforts for [a ctf team](https://ctftime.org/team/128953/) to get several top 10 finishes
 
-- worked on developing novel authentication technology at [intel labs](https://www.intel.com/content/www/us/en/research/overview.html) for a couple summers
+- researched [crispr](https://en.wikipedia.org/wiki/CRISPR) protospacer distributions at the [national center for biotech information](https://www.ncbi.nlm.nih.gov/) 
+
+- worked on developing novel authentication technologies at [intel labs](https://www.intel.com/content/www/us/en/research/overview.html) for a couple summers
 
 heads up that in the above and news articles about me, my deadname ([what's that?](https://en.wikipedia.org/wiki/Deadnaming)) shows up once in a while. i don't particularly care if you see it, but just know i'm the same person.
 
