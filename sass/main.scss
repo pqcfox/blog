@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 1.4rem;
+
+  @media (max-width: $phone-max-width) {
+    font-size: 1.2rem;
+  }
 }
 
 h2 {
