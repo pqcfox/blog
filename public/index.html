@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>kat&#x27;s notes</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://pqcfox.dev/style.css">
+    <link rel="stylesheet" href="https://pqcfox.dev/color/orange.css">
+<link rel="stylesheet" href="https://pqcfox.dev/font-iosevka.scss">
+
+
+    <meta name="description" content="a blog on cybersecurity, computational math, and compilers written entirely by a fox">
+
+    <meta property="og:description" content="a blog on cybersecurity, computational math, and compilers written entirely by a fox">
+    <meta property="og:title" content="kat's notes">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pqcfox.dev/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="a blog on cybersecurity, computational math, and compilers written entirely by a fox">
+    <meta name="twitter:title" content="kat's notes">
+    <meta property="twitter:domain" content="pqcfox.dev">
+    <meta property="twitter:url" content="https://pqcfox.dev/">
+
+                <link rel="alternate" type="application/rss+xml" title="kat&#x27;s notes RSS Feed" href="https://pqcfox.dev/rss.xml" />
+                <link rel="alternate" type="application/atom+xml" title="kat&#x27;s notes Atom Feed" href="https://pqcfox.dev/atom.xml" />
+        <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://pqcfox.dev" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            &#x2F;&#x2F; kat&#x27;s notes &#x2F;&#x2F;
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://pqcfox.dev">blog</a></li>
+            
+                <li><a href="https://pqcfox.dev/tags">tags</a></li>
+            
+                <li><a href="https://pqcfox.dev/archive">archive</a></li>
+            
+                <li><a href="https://pqcfox.dev/about">about</a></li>
+            
+                <li><a href="https://github.com/pqcfox" target="_blank" rel="noopener noreferrer">github</a></li>
+            
+                <li><a href="https://linkedin.com/in/katiewat" target="_blank" rel="noopener noreferrer">linkedin</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+        <div class="posts">
+                <div class="post on-list">
+                    
+    <h1 class="post-title"><a href="https://pqcfox.dev/gbadoom-notes/">embedded doom part 1: analyzing gbadoom</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2024-10-09
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://pqcfox.dev/tags/doom/">#doom</a>&nbsp;
+                <a class="post-tag" href="https://pqcfox.dev/tags/software/">#software</a></span>
+    
+
+
+                    <div class="post-content">
+            <p>welcome back!</p>
+<p>as foreshadowed, an article on doom. why? because i want to make an embedded doom port for a gag project and realized i have no idea how to do that. ^^;</p>
+<p>plus, doom is essentially the <a href="https://en.wikipedia.org/wiki/Caenorhabditis_elegans">c. elegans</a> of the software world: well-documented and simple enough to understand in parts, but complex and interesting enough to study in various ways. you can learn a lot about software development by studying the doom source.</p>
+<p>so, we're going to study <a href="https://github.com/doomhack/GBADoom">gbadoom</a>, a port of doom to the <a href="https://en.wikipedia.org/wiki/Game_Boy_Advance">nintendo game boy advance</a>. (bear with me, i promise i'll get to why.)</p>
+<h3 id="the-challenge-of-embedded-doom">/// the challenge of embedded doom ///</h3>
+<p>doom was released by <a href="https://en.wikipedia.org/wiki/Id_Software">id software</a> and had the following <a href="https://www.reddit.com/r/gaming/comments/a4yi5t/original_doom_system_requirements_from_my_25_year/">minimum requirements</a>:</p>
+<ul>
+<li>"IBM or compatible 386 or better"</li>
+<li>4MB RAM</li>
+<li>VGA graphics card</li>
+<li>Hard disk drive</li>
+</ul>
+<p>doom is still renowned today for being <em>insanely</em> portable due to low system requirements and careful modular design. notably, because the i486's <a href="https://en.wikipedia.org/wiki/Floating-point_unit">fpu</a> was too slow for use in doom, the codebase even includes a purpose-built fixed-point arithmetic library used for all of the rendering calculations, meaning it's particularly amenable to running on microcontrollers...</p>
+<p>...<em>except for that whole "4MB" of RAM thing.</em> that's what we need to work around. but how?</p>
+<h3 id="existing-ports">/// existing ports ///</h3>
+<p>there have been several remarkable embedded ports of doom in just the last decade. here's a highlight of some:</p>
+<table><thead><tr><th><em>port</em></th><th><em>device</em></th><th><em>processor</em></th><th><em>ram</em></th><th><em>writeup</em></th></tr></thead><tbody>
+<tr><td><a href="https://github.com/floppes/stm32doom">stm32doom</a></td><td>stm32f429i-disc1</td><td>arm cortex-m4</td><td><strong>256KB</strong></td><td>none</td></tr>
+<tr><td><a href="https://github.com/doomhack/PsionDoom">psion-doom</a></td><td>epoc r5 pdas</td><td>cl-ps7110</td><td><strong>8MB</strong></td><td>none</td></tr>
+<tr><td><a href="https://github.com/doomhack/GBADoom">gbadoom</a></td><td>gameboy advance</td><td>arm7tdmi</td><td><strong>32KB</strong></td><td>none</td></tr>
+<tr><td><a href="https://github.com/ghidraninja/game-and-watch-doom">game-and-watch-doom</a></td><td>game and watch</td><td>arm cortex-m7</td><td><strong>1.4MB</strong></td><td><a href="https://www.youtube.com/watch?v=sNg_S9UM5ps">video</a></td></tr>
+<tr><td><a href="https://github.com/marciopocebon/MG21DOOM">mg21doom</a></td><td>ikea trådfri lamp</td><td>arm cortex-m33</td><td><strong>108KB</strong></td><td>none</td></tr>
+<tr><td><a href="https://github.com/turtiustrek/magiclantern_doom">magiclantern-doom</a></td><td>eos 200d camera</td><td>arm946e-s</td><td>???</td><td>none</td></tr>
+<tr><td><a href="https://github.com/NordicPlayground/nrf-doom">nrfdoom</a></td><td>nrf5340</td><td>arm cortex-m33</td><td><strong>512KB</strong></td><td><a href="https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/doom-on-nrf5340">blog</a></td></tr>
+<tr><td><a href="https://github.com/next-hack/nRF52840Doom">nrf52840doom</a></td><td>nrf52840</td><td>arm cortex-m4</td><td><strong>256KB</strong></td><td><a href="https://next-hack.com/index.php/2021/11/13/porting-doom-to-an-nrf52840-based-usb-bluetooth-le-dongle/">blog</a></td></tr>
+<tr><td><a href="https://kilograham.github.io/rp2040-doom/">rp2040-doom</a></td><td>nrf52840</td><td>arm cortex-m0+</td><td><strong>264KB</strong></td><td><a href="https://kilograham.github.io/rp2040-doom/">article</a></td></tr>
+</tbody></table>
+<p>you might note that there's a couple outliers in the ram column. 108KB? 32KB?? how do you get a game like doom down from 4MB to just 32KB?</p>
+<h3 id="disecting-gbadoom">/// disecting gbadoom ///</h3>
+<p>the <em>really</em> low-memory ports above all seem to share a common ancestry: they tend to be based on <strong>gbadoom</strong>, which in turn was based on <a href="https://prboom.sourceforge.net/">prBoom</a>, a well-loved port of doom emphasizing code quality and bug fixes while maintaining the original spirit of the game.</p>
+<p>to see what steps <strong>gbadoom</strong> took to go from a fully-featured desktop port of doom down to one that would fit on a gameboy, the best route is the git history.</p>
+<blockquote>
+<p><em>aside:</em> reading the git history of projects is an <em>exceptionally</em> underrated way of learning how to do new things. want to write an os? look at how linux started. want to write a compiler? look at what rustc grew from.</p>
+</blockquote>
+<p>...</p>
+
+        </div>
+
+                </div>
+            
+                <div class="post on-list">
+                    
+    <h1 class="post-title"><a href="https://pqcfox.dev/initial-commit/">git commit -m &quot;initial commit&quot;</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2024-10-09
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://pqcfox.dev/tags/meta/">#meta</a></span>
+    
+
+
+                    <div class="post-content">
+            <p>hiya!</p>
+<p>i'm kat, and this is my new blog!</p>
+<p>i work in cybersecurity and co-founded the startup <a href="https://www.crunchbase.com/organization/radical-semiconductor">radical semiconductor</a>, which focused on designing next-generation processing-in-memory cryptography accelerators. radical was <a href="https://thequantuminsider.com/2024/09/25/btq-technologies-completes-acquisition-of-radical-semiconductors-processing-in-memory-technology-portfolio/">just acquired</a> (!) which means i finally have time to write a blog.</p>
+<p>if you're curious about the stuff i enjoy, here's some other things i've done:</p>
+<ul>
+<li>
+<p>co-led stanford's inaugural <a href="https://urc.marssociety.org/">university rover challenge</a> team</p>
+</li>
+<li>
+<p>wrote avionics code and developed flight sims for <a href="https://www.stanfordssi.org/">stanford student space initiative</a>'s spin-stabilized <a href="https://en.wikipedia.org/wiki/Rockoon">rockoon</a> prototype (met my cofounders doing this!)</p>
+</li>
+<li>
+<p>implemented drug discovery ML visualization tools (now in production!) for <a href="https://www.schrodinger.com/">schrödinger</a></p>
+</li>
+<li>
+<p>published <a href="https://arxiv.org/abs/1904.02225">research demonstrating significant shortcomings</a> in a <a href="https://svl.stanford.edu/">stanford vision lab</a> visual grounding model</p>
+</li>
+<li>
+<p>ran windows/active directory offense for stanford's <a href="https://cp.tc/">collegiate penetration testing competition</a> team, scoring 2nd place worldwide (got to <a href="https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/">dump lsass</a> on the dc--was a super exciting moment)</p>
+</li>
+<li>
+<p>wrote an undergrad thesis providing an "operationalized" introduction to <a href="https://en.wikipedia.org/wiki/GKM_variety">gkm varieties</a></p>
+</li>
+<li>
+<p>frequently led the crypto efforts for <a href="https://ctftime.org/team/128953/">a ctf team</a> to get several top 10 finishes</p>
+</li>
+<li>
+<p>researched <a href="https://en.wikipedia.org/wiki/CRISPR">crispr</a> protospacer distributions at the <a href="https://www.ncbi.nlm.nih.gov/">national center for biotech information</a></p>
+</li>
+<li>
+<p>worked on developing novel authentication technologies at <a href="https://www.intel.com/content/www/us/en/research/overview.html">intel labs</a> for a couple summers</p>
+</li>
+</ul>
+<p>heads up that in the above and news articles about me, my deadname (<a href="https://en.wikipedia.org/wiki/Deadnaming">what's that?</a>) shows up once in a while. i don't particularly care if you see it, but just know i'm the same person.</p>
+<p>uh, yeah! working on a fun doom port right now, so hopefully that should be ready for the next blog post :)</p>
+<p>-- kat</p>
+
+        </div>
+
+                </div>
+            <div class="pagination">
+                <div class="pagination__buttons"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2024
+ Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>
