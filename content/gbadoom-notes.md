@@ -49,8 +49,63 @@ you might note that there's a couple outliers in the ram column. 108KB? 32KB?? h
 
 the _really_ low-memory ports above all seem to share a common ancestry: they tend to be based on **gbadoom**, which in turn was based on [prBoom](https://prboom.sourceforge.net/), a well-loved port of doom emphasizing code quality and bug fixes while maintaining the original spirit of the game. 
 
-to see what steps **gbadoom** took to go from a fully-featured desktop port of doom down to one that would fit on a gameboy, the best route is the git history. 
+to see what steps **gbadoom** took to go from a fully-featured desktop port of doom down to one that would fit on a gameboy, the best route is the git history. the general gist of what happens next is outlined in `README.md` from tag `0.1`:
 
-> _aside:_ reading the git history of projects is an _exceptionally_ underrated way of learning how to do new things. want to write an os? look at how linux started. want to write a compiler? look at what rustc grew from.
+> - Delete all the stuff that isn't needed.
+> - Rewrite the IWAD handling to use const memory pointers so it can run from memory-mapped rom.
+> - Remove as many non-const global vars as possible.
+> - Move the remaining globals to a global struct which can be allocd in EWRAM to free up the 32kb of fast IWRAM.
+> - Port the remaing mess to the GBA.
+> - Move the hot-path code and data to IWRAM.
+> - Play DOOM at about 7fps. Yay!
 
-...
+we'll cover these step by step. first, deleting stuff--this is pretty straightforward. 
+
+### /// deleting stuff ///
+
+the entire first chunk of the commit history is tossing out code. the dropped features include:
+
+- **compatibility**: 
+  
+  prBoom has a [compatibility mode](https://doomwiki.org/wiki/PrBoom) setting to match the behavior of previous games--this saves a lot of memory off the bat
+
+- **screen and audio adjustments**: 
+
+  we don't need to allow various screen resolutions or numbers of audio channels, and the volume control is handled by the console
+
+- **uncapped framerate support**
+
+  a fixed framerate is fine, so all of the logic re: player movement interpolation and smoothing can be discarded
+
+- **screenshots**, **netgame support**
+
+  these can't really be done well on the gba anyway!
+  
+- **music**
+
+  this is removed for space now, but is added back later in a more lightweight manner.
+
+- **settings**, **console commands**
+
+  every configurable setting was converted to a constant to save RAM, after which configuration loading was removed as well: 
+
+  - key bindings
+  - map, menu, and heads-up display (hud) colors
+  - hud enable/disable
+  - weapon preferences
+
+- **wad (doom map file) loading**
+
+  wads are now directly linked into the code, rather than loaded from a filesystem
+
+according to the commit message following these changes, the memory footprint of prBoom was then **1.5MB**--still a far cry from 32KB.
+
+# /// moving globals ///
+
+the next step in porting was hoisting all of the globals into an 800-line `globals_t` struct with its own header file, `global_data.h`. 
+
+from my understanding, the idea here is that now there's only a single memory address being passed around, and each function which recevies the struct can then take fixed offsets into it rather than having to pass around multiple addresses, meaning (ideally) less stack space is required. 
+
+there's an interesting related discussion on stack overflow [here](https://stackoverflow.com/questions/6687088/performance-implications-of-global-variables-in-c) that's worth a peek.
+
+# /// the interesting stuff /// 
