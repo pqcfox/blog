@@ -34,7 +34,7 @@ hence, i've needed to find some way of taking systems that help me during the wo
 
 ## >>> prioritization
 
-(*tl;dr: ferociously guard a slim active set of projects, and keep a backlog for ideas*)
+*tl;dr: ferociously guard a slim active set of projects, and keep a backlog for ideas*
 
 the first thing difficult for me about pet projects is prioritization. i presently have ~~8~~ 9 projects at various stages all vying for my attention, and the version of me waking up tomorrow is often motivated by an entirely different set of projects than the version of me right now.
 
@@ -60,7 +60,7 @@ this way, the projects in the active set see continued, sustainable progress for
 
 ## >>> scoping pet projects
 
-(*tl;dr: be intentional about project scope, but let it change*)
+*tl;dr: be intentional about project scope, but let it change*
 
 most of the time, when i dive in on a pet project, the first picture in my mind is the completed project exactly as i would ideally envision it.
 
@@ -80,7 +80,7 @@ all this to say: do what works for you. be disciplined about it, pick good times
 
 ## >>> status/time tracking
 
-(*tl;dr: keep just enough tracking to see progress*)
+*tl;dr: keep just enough tracking to see progress*
 
 as someone who has seen tried numerous techniques for project management with small teams, i can say this with certainty: if you make tracking high maintenance, things will go untracked.
 
@@ -92,7 +92,7 @@ one project i'm working on right now is adding time tracking capabilities to my 
 
 ## >>> peer pressure
 
-(*tl;dr: make the project matter to others and you'l work on it more*)
+*tl;dr: make the project matter to others and you'l work on it more*
 
 this one's easy, and something a lot of people discussing personal projects online get right. i'll often make a point of telling my friends/coworkers about my projects. sometimes i'll ask them in depth about theirs, and often their enthusiasm will spark some of my own.
 
@@ -104,7 +104,7 @@ by sharing with others, i've often learned a lot more from projects (and had a l
 
 ## >>> next steps?
 
-(*tl;dr: more to come*)
+*tl;dr: more to come*
 
 this is just a short overview of some thoughts i've been accumulating on pet projects. i'll definitely include more as i continue refining what works for me. 
 
