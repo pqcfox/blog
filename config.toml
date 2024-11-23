@@ -20,7 +20,6 @@ logo_text = "// kat's notes //"
 menu_items = [
     {name = "blog", url = "$BASE_URL"},
     {name = "tags", url = "$BASE_URL/tags"},
-    {name = "archive", url = "$BASE_URL/archive"},
     {name = "about", url = "$BASE_URL/about"},
     {name = "github", url = "https://github.com/pqcfox", newtab = true},
     {name = "linkedin", url = "https://linkedin.com/in/katiewat", newtab = true},
