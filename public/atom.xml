@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>kat&#x27;s notes</title>
+    <subtitle>a blog on cybersecurity, computational math, and compilers written entirely by a fox</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://pqcfox.dev/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://pqcfox.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-11-23T00:00:00+00:00</updated>
+    <id>https://pqcfox.dev/atom.xml</id>
+    <entry xml:lang="en">
+        <title>some notes on pet projects</title>
+        <published>2024-11-23T00:00:00+00:00</published>
+        <updated>2024-11-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://pqcfox.dev/project-management/"/>
+        <id>https://pqcfox.dev/project-management/</id>
+        
+        <content type="html" xml:base="https://pqcfox.dev/project-management/">&lt;p&gt;turns out, porting doom takes a bit, so i&#x27;ve decided to make smaller, more useful-to-me posts in the meantime as a way of getting myself in the habit of blogging.&lt;&#x2F;p&gt;
+&lt;p&gt;today: a quick overview on some ways i&#x27;ve made project management work for my personal projects!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;&amp;gt;&amp;gt;&amp;gt; the problem&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;tl;dr: tracking projects is hard, steal ideas from your workplace to do it better&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;if you work in engineering, generally speaking your place of work will have some kind of project management system in place. usually this involves&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;software tools&lt;&#x2F;li&gt;
+&lt;li&gt;lots of timelines&lt;&#x2F;li&gt;
+&lt;li&gt;various forms of techinical documentation&lt;&#x2F;li&gt;
+&lt;li&gt;constant group communication&lt;&#x2F;li&gt;
+&lt;li&gt;plenty of peer pressure to complete things on time&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;and other (potentially threatening) elements to taste, ideally with the outcome of completed projects mostly on schedule.&lt;&#x2F;p&gt;
+&lt;p&gt;as someone who&#x27;s been both a project manager and an individual contributor, i can say that when tuned right, these systems work wonders for my ability to get things done.&lt;&#x2F;p&gt;
+&lt;p&gt;but what about when i&#x27;m at home?&lt;&#x2F;p&gt;
+&lt;p&gt;as someone with &lt;strong&gt;[redacted set of neurodivergences]&lt;&#x2F;strong&gt;, i can comfortably say that if a project takes more than an hour, and i don&#x27;t have a way of tracking it, it&#x27;s not going to get done.&lt;&#x2F;p&gt;
+&lt;p&gt;hence, i&#x27;ve needed to find some way of taking systems that help me during the workday and (in a healthy, sustainable way) converting them into things that work for me on my own time. here&#x27;s what i&#x27;ve found!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prioritization&quot;&gt;&amp;gt;&amp;gt;&amp;gt; prioritization&lt;&#x2F;h2&gt;
+&lt;p&gt;(&lt;em&gt;tl;dr: ferociously guard a slim active set of projects, and keep a backlog for ideas&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;p&gt;the first thing difficult for me about pet projects is prioritization. i presently have &lt;del&gt;8&lt;&#x2F;del&gt; 9 projects at various stages all vying for my attention, and the version of me waking up tomorrow is often motivated by an entirely different set of projects than the version of me right now.&lt;&#x2F;p&gt;
+&lt;p&gt;what i&#x27;ve discovered: &lt;strong&gt;this is actually great!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;companies have deadlines, but as a person working on pet projects, i (generally) don&#x27;t. if&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;there&#x27;s a consistent routine in place for working on pet projects, and&lt;&#x2F;li&gt;
+&lt;li&gt;each project in that rotation gets attention regularly&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;those projects will by necessity eventually be completed.&lt;&#x2F;p&gt;
+&lt;p&gt;i&#x27;ve found it important though to (a) determine a set of projects that consistently catches my interest, and (b) put in regular time on that rotation of projects, making sure each one&#x27;s receiving attention hit.&lt;&#x2F;p&gt;
+&lt;p&gt;this requires a bit of self-honesty, but keeping a reasonably-sized project rotation as well as a backlog seems to work well. if i have a new idea, it goes on the backlog. if one of my projects isn&#x27;t getting the attention it needs, it moves to the backlog.&lt;&#x2F;p&gt;
+&lt;p&gt;the set of &quot;active&quot; projects should:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;contain at least one project that i&#x27;ll be interested in every time i sit down to work on pet projects&lt;&#x2F;li&gt;
+&lt;li&gt;have few enough projects to be able to reasonably rotate among them.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;this way, the projects in the active set see continued, sustainable progress for their lifetime.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;scoping-pet-projects&quot;&gt;&amp;gt;&amp;gt;&amp;gt; scoping pet projects&lt;&#x2F;h2&gt;
+&lt;p&gt;(&lt;em&gt;tl;dr: be intentional about project scope, but let it change&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;p&gt;most of the time, when i dive in on a pet project, the first picture in my mind is the completed project exactly as i would ideally envision it.&lt;&#x2F;p&gt;
+&lt;p&gt;this is generally not realistic, and often leads to disappointment.&lt;&#x2F;p&gt;
+&lt;p&gt;fortunately, unlike a company, i don&#x27;t have any stakeholders except myself. if i care about a project just to learn, it makes sense to be intentional and denote the project as &quot;exploratory&quot;: i.e. however far i get, i&#x27;ll be satisfied. if i care about a project strictly for the end goal, it can help to scope out a &quot;minimum viable product&quot; i&#x27;d like, and aim for that instead of some grand abstract vision.&lt;&#x2F;p&gt;
+&lt;p&gt;the best part is that because i&#x27;m only beholden to myself, these scopes can change drastically.&lt;&#x2F;p&gt;
+&lt;p&gt;around 2009, the &lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;@bre&#x2F;the-cult-of-done-manifesto-724ca1c2ff13&quot;&gt;cult of done manifesto&lt;&#x2F;a&gt; started circling the internet, with the core idea of getting things done quickly and discarding them for the next task. it (naturally) found a cult following, because most people have an innate desire to be seen as consistent over time.&lt;&#x2F;p&gt;
+&lt;p&gt;in 2017, i started a cs degree studying machine learning. i completely abandoned it. why? because it became &lt;em&gt;mind-numbingly&lt;&#x2F;em&gt; boring.&lt;&#x2F;p&gt;
+&lt;p&gt;i switched majors to math, then got into cybersecurity, then ran and sold a startup. and i&#x27;m happy, and have a lot of great experiences to draw from, because i explicitly chose &lt;em&gt;not&lt;&#x2F;em&gt; to finish something.&lt;&#x2F;p&gt;
+&lt;p&gt;all this to say: do what works for you. be disciplined about it, pick good times to pivot, and make sure you learn lessons as you go, but in everything you don&#x27;t enjoy, keep your knife to the rope so you can cut and run.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;status-and-time-tracking&quot;&gt;&amp;gt;&amp;gt;&amp;gt; status and time tracking&lt;&#x2F;h2&gt;
+&lt;p&gt;(&lt;em&gt;tl;dr: keep just enough tracking to see progress&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;p&gt;as someone who has seen tried numerous techniques for project management with small teams, i can say this with certainty: if you make tracking high maintenance, things will go untracked.&lt;&#x2F;p&gt;
+&lt;p&gt;i use a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Kanban_board&quot;&gt;kanban board&lt;&#x2F;a&gt; so i can see the progress happening on longer pet projects. going further than that for personal projects is excessive and chews up time i could be building something.&lt;&#x2F;p&gt;
+&lt;p&gt;time management can be good to get a sense of what projects are actually receiving focus--this is useful when updating the active set of projects. it can also feel nice to look back and think about the amount of time i&#x27;ve poured into projects if the material progress isn&#x27;t there yet.&lt;&#x2F;p&gt;
+&lt;p&gt;one project i&#x27;m working on right now is adding time tracking capabilities to my &lt;a href=&quot;https:&#x2F;&#x2F;watchy.sqfmi.com&#x2F;&quot;&gt;watchy&lt;&#x2F;a&gt; so i can take care of this with the press of a button. hopefully will have more to share here soon on that. ^^&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;peer-pressure&quot;&gt;&amp;gt;&amp;gt;&amp;gt; peer pressure&lt;&#x2F;h2&gt;
+&lt;p&gt;(&lt;em&gt;tl;dr: make the project matter to others and you&#x27;l work on it more&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;p&gt;this one&#x27;s easy, and something a lot of people discussing personal projects online get right. i&#x27;ll often make a point of telling my friends&#x2F;coworkers about my projects. sometimes i&#x27;ll ask them in depth about theirs, and often their enthusiasm will spark some of my own.&lt;&#x2F;p&gt;
+&lt;p&gt;on occasion, i&#x27;ve found working with academic researchers can make sense when my projects are academically relevant. few people are more actively enthusiastic about their fields than those in academia (well, at least in math and PLT).&lt;&#x2F;p&gt;
+&lt;p&gt;it can also be worthwhile to fit exploratory projects into existing open source work, or tie them into topics others personally care about to find fresh motivation.&lt;&#x2F;p&gt;
+&lt;p&gt;by sharing with others, i&#x27;ve often learned a lot more from projects (and had a lot more fun).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;&amp;gt;&amp;gt;&amp;gt; next steps?&lt;&#x2F;h2&gt;
+&lt;p&gt;(&lt;em&gt;tl;dr: more to come&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;p&gt;this is just a short overview of some thoughts i&#x27;ve been accumulating on pet projects. i&#x27;ll definitely include more as i continue refining what works for me.&lt;&#x2F;p&gt;
+&lt;p&gt;til then!&lt;&#x2F;p&gt;
+&lt;p&gt;-- kat&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>git commit -m &quot;initial commit&quot;</title>
+        <published>2024-10-09T00:00:00+00:00</published>
+        <updated>2024-10-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://pqcfox.dev/initial-commit/"/>
+        <id>https://pqcfox.dev/initial-commit/</id>
+        
+        <content type="html" xml:base="https://pqcfox.dev/initial-commit/">&lt;p&gt;hiya!&lt;&#x2F;p&gt;
+&lt;p&gt;i&#x27;m kat, and this is my new blog!&lt;&#x2F;p&gt;
+&lt;p&gt;i work in cybersecurity and co-founded the startup &lt;a href=&quot;https:&#x2F;&#x2F;www.crunchbase.com&#x2F;organization&#x2F;radical-semiconductor&quot;&gt;radical semiconductor&lt;&#x2F;a&gt;, which focused on designing next-generation processing-in-memory cryptography accelerators. radical was &lt;a href=&quot;https:&#x2F;&#x2F;thequantuminsider.com&#x2F;2024&#x2F;09&#x2F;25&#x2F;btq-technologies-completes-acquisition-of-radical-semiconductors-processing-in-memory-technology-portfolio&#x2F;&quot;&gt;just acquired&lt;&#x2F;a&gt; (!) which means i finally have time to write a blog.&lt;&#x2F;p&gt;
+&lt;p&gt;if you&#x27;re curious about the stuff i enjoy, here&#x27;s some other things i&#x27;ve done:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;co-led stanford&#x27;s inaugural &lt;a href=&quot;https:&#x2F;&#x2F;urc.marssociety.org&#x2F;&quot;&gt;university rover challenge&lt;&#x2F;a&gt; team&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;wrote avionics code and developed flight sims for &lt;a href=&quot;https:&#x2F;&#x2F;www.stanfordssi.org&#x2F;&quot;&gt;stanford student space initiative&lt;&#x2F;a&gt;&#x27;s spin-stabilized &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Rockoon&quot;&gt;rockoon&lt;&#x2F;a&gt; prototype (met my cofounders doing this!)&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;implemented drug discovery ML visualization tools (now in production!) for &lt;a href=&quot;https:&#x2F;&#x2F;www.schrodinger.com&#x2F;&quot;&gt;schrödinger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;published &lt;a href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1904.02225&quot;&gt;research demonstrating significant shortcomings&lt;&#x2F;a&gt; in a &lt;a href=&quot;https:&#x2F;&#x2F;svl.stanford.edu&#x2F;&quot;&gt;stanford vision lab&lt;&#x2F;a&gt; visual grounding model&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;ran windows&#x2F;active directory offense for stanford&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;cp.tc&#x2F;&quot;&gt;collegiate penetration testing competition&lt;&#x2F;a&gt; team, scoring 2nd place worldwide (got to &lt;a href=&quot;https:&#x2F;&#x2F;www.microsoft.com&#x2F;en-us&#x2F;security&#x2F;blog&#x2F;2022&#x2F;10&#x2F;05&#x2F;detecting-and-preventing-lsass-credential-dumping-attacks&#x2F;&quot;&gt;dump lsass&lt;&#x2F;a&gt; on the dc--was a super exciting moment)&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;wrote an undergrad thesis providing an &quot;operationalized&quot; introduction to &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;GKM_variety&quot;&gt;gkm varieties&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;frequently led the crypto efforts for &lt;a href=&quot;https:&#x2F;&#x2F;ctftime.org&#x2F;team&#x2F;128953&#x2F;&quot;&gt;a ctf team&lt;&#x2F;a&gt; to get several top 10 finishes&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;researched &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;CRISPR&quot;&gt;crispr&lt;&#x2F;a&gt; protospacer distributions at the &lt;a href=&quot;https:&#x2F;&#x2F;www.ncbi.nlm.nih.gov&#x2F;&quot;&gt;national center for biotech information&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;worked on developing novel authentication technologies at &lt;a href=&quot;https:&#x2F;&#x2F;www.intel.com&#x2F;content&#x2F;www&#x2F;us&#x2F;en&#x2F;research&#x2F;overview.html&quot;&gt;intel labs&lt;&#x2F;a&gt; for a couple summers&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;heads up that in the above and news articles about me, my deadname (&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Deadnaming&quot;&gt;what&#x27;s that?&lt;&#x2F;a&gt;) shows up once in a while. i don&#x27;t particularly care if you see it, but just know i&#x27;m the same person.&lt;&#x2F;p&gt;
+&lt;p&gt;uh, yeah! working on a fun doom port right now, so hopefully that should be ready for the next blog post :)&lt;&#x2F;p&gt;
+&lt;p&gt;-- kat&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
