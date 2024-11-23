@@ -43,7 +43,7 @@ what i've discovered: **this is actually great!**
 companies have deadlines, but as a person working on pet projects, i (generally) don't. if 
 
 - there's a consistent routine in place for working on pet projects, and
-- each project in that rotation gets attention regularly
+- each project in that rotation gets attention regularly.
 
 those projects will by necessity eventually be completed. 
 
