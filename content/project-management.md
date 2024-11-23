@@ -71,12 +71,15 @@ fortunately, unlike a company, i don't have any stakeholders except myself. if i
 the best part is that because i'm only beholden to myself, these scopes can change drastically. 
 
 around 2009, the [cult of done manifesto](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) started circling the internet, with the core idea of getting things done quickly and discarding them for the next task. it (naturally) found a cult following, because most people have an innate desire to be seen as consistent over time.
+there are a lot of things like the cult of done online. it's arguably one of the more commonly expressed views on personal projects you'll see. 
+
+when i work on something that takes more than a day, i find those views aren't helpful.
 
 in 2017, i started a cs degree studying machine learning. i completely abandoned it. why? because it became *mind-numbingly* boring.
 
 i switched majors to math, then got into cybersecurity, then ran and sold a startup. and i'm happy, and have a lot of great experiences to draw from, because i explicitly chose *not* to finish something.
 
-all this to say: do what works for you. be disciplined about it, pick good times to pivot, and make sure you learn lessons as you go, but in everything you don't enjoy, keep your knife to the rope so you can cut and run.
+all this to say: do what works for you. be disciplined about it, pick good times to pivot, and make sure you learn lessons as you go, but in everything you stop enjoying, keep your knife to the rope so you can cut and run.
 
 ## >>> status/time tracking
 
