@@ -78,7 +78,7 @@ i switched majors to math, then got into cybersecurity, then ran and sold a star
 
 all this to say: do what works for you. be disciplined about it, pick good times to pivot, and make sure you learn lessons as you go, but in everything you don't enjoy, keep your knife to the rope so you can cut and run.
 
-## >>> status and time tracking
+## >>> status/time tracking
 
 (*tl;dr: keep just enough tracking to see progress*)
 
